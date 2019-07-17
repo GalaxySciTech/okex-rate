@@ -15,7 +15,7 @@ for i in range(1, 11):
     list = data["data"]["fundingRates"]
     for y in list:
         num = num + 1
-        print(y["realFundingRate"])
+        # print(y["realFundingRate"])
         sum = sum + Decimal(y["realFundingRate"])
 
 rate = sum / num
