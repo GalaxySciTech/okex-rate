@@ -16,7 +16,7 @@ for i in range(1, 11):
     for y in list:
         num = num + 1
         # print(y["realFundingRate"])
-        sum = sum + Decimal(y["realFundingRate"])
+        sum += Decimal(y["realFundingRate"])
 
 rate = sum / num
 print("okex永续合约每日平均费率:", rate * 3 * 100, "%")
