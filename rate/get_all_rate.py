@@ -14,7 +14,7 @@ for index,i in enumerate(x):
     d=requests.get(url+"/api/swap/v3/instruments/"+i+"/funding_time").text
     d=json.loads(d)
     y.append(float(d["funding_rate"]))
-    i=str(i).replace("-USDT-SWAP","").replace("-USD-SWAP","")
+    i=str(i).replace("-SWAP","")
     x[index]=i
     print(i+":"+d["funding_rate"])
 
@@ -23,5 +23,6 @@ for index,i in enumerate(x):
 # y=[-0.00014718,-0.00009366,-0.0003]
 plt.figure(figsize=(25,4))
 y, x = (list(t) for t in zip(*sorted(zip(y, x))))
+plt.xticks(rotation=40)
 plt.bar(x,y)
 plt.show()
